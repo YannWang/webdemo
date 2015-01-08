@@ -9,5 +9,7 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="D:/software/eclipse-jee-luna/workspace/webDemo/WebContent/WEB-INF/lib/servlet-api.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Hibernate Dependency Library"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Other Libraries"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
