@@ -11,19 +11,26 @@ import test.domain.News;
 
 public class NewsManager {
 	public static void main(String[] args) throws Exception {
-		Configuration conf = new Configuration().configure();
-		ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
-        .applySettings(conf.getProperties()).build();
-		SessionFactory sf = conf.buildSessionFactory(serviceRegistry);
+		// Configuration conf = new Configuration().configure();
+		// ServiceRegistry serviceRegistry = new
+		// StandardServiceRegistryBuilder()
+		// .applySettings(conf.getProperties()).build();
+		// SessionFactory sf = conf.buildSessionFactory(serviceRegistry);
+
+		SessionFactory sf = new Configuration().configure()
+				.buildSessionFactory(
+						new StandardServiceRegistryBuilder().build());
+
+		// Session sess = sf.getCurrentSession();
 		Session sess = sf.openSession();
-		Transaction tx = sess.beginTransaction();
-		
+		sess.beginTransaction();
 		News n = new News();
 		n.setTitle("反腐风暴继续");
 		n.setContent("中央反腐风暴继续，六省会城市市委书记落马。");
-		
 		sess.save(n);
-		tx.commit();
+
+		sess.getTransaction().commit();
+
 		sess.close();
 		sf.close();
 	}
